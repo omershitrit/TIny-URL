@@ -5,9 +5,9 @@ import validator from 'validator'
 const ERROR_MSG = "Please enter a valid url";
 
 const App = () => {
-  const [url, setUrl] = useState('');
-  const [tinyurl, setTinyurl] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [url, setUrl] = useState("");
+  const [tinyurl, setTinyurl] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = e => setUrl(e.target.value);
 
@@ -22,7 +22,7 @@ const App = () => {
 
     const payload = { key: url, value: null };
     axios({
-      url: 'http://localhost:8080/api/save',
+      url: 'https://tiny-url-react.herokuapp.com/api/save',
       method: 'POST',
       data: payload
     }).then(response => {
